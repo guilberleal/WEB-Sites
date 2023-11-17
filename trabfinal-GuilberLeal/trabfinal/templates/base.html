@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  {% block styles %}
+  <!-- Bootstrap CSS -->
+  {{ bootstrap.load_css() }}
+  {% endblock %}
+  <title>LOLchampions</title>
+  <link rel="stylesheet" href={{url_for('static', filename='style.css' )}}>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-dark bg-dark">
+    <span class="navbar-brand mb-0 h1">LOLchampions</span>
+  </nav>
+
+  <div class="row align-items-center">
+    <div class="col-auto">
+      <label for="name">Nome</label>
+    </div>
+    <div class="col-auto">
+      <input type="text" class="form-control" id="name" placeholder="Pesquisa por personagem">
+    </div>
+    <div class="col-auto">
+      <label for="tags">Tags</label>
+    </div>
+    <div class="col-auto">
+      <select class="form-control" id="tags">
+        <option> </option>
+        <option>assassin</option>
+        <option>carry</option>
+        <option>fighter</option>
+        <option>jungler</option>
+        <option>mage</option>
+        <option>melee</option>
+        <option>pusher</option>
+        <option>ranged</option>
+        <option>recommended</option>
+        <option>stealth</option>
+        <option>support</option>
+        <option>tank</option>
+      </select>
+    </div>
+    <div class="col"><button class="btn btn-primary" onclick="submit_entry()">Enviar</button></div>
+
+  </div>
+  <main>
+
+    <section class="LOLchampions">
+      {% block charlist %}
+      {% endblock %}
+    </section>
+  </main>
+</body>
+
+{%block script%}
+<script>
+  function submit_entry() {
+    var name = document.getElementById("name");
+    var tags = document.getElementById("tags");
+
+
+
+
+
+    var entry = {
+      name: name.value,
+      tags: tags.value
+    }
+
+
+    fetch('/catch', {
+      method: "POST",
+      credentials: "include",
+      body: JSON.stringify(entry),
+      cache: "no-cache",
+      headers: new Headers({
+        "content-type": "application/json"
+      })
+    })
+      .then(function (response) {
+        if (response.status !== 200) {
+          console.log('Response status was not 200 ${response.status}');
+          return;
+        }
+        response.json().then(function (data) {
+
+          render(data);
+
+        })
+      })
+  }
+
+  function render(data) {
+    var x = document.getElementsByClassName('LOLchampions')[0]
+    while (x.firstChild) {
+      x.removeChild(x.lastChild)
+    }
+    for (var p = 0; p < data.length; p++) {
+      var el = document.createElement("div");
+      el.setAttribute('class', 'champion')
+      el.setAttribute('data-name', data[p].name)
+      el.setAttribute('data-tags', '[' + data[p].tags + ']')
+
+      //fig and image
+      var fig = document.createElement("figure")
+      fig.setAttribute('class', 'champion-figure')
+
+      var img = document.createElement("img")
+      img.setAttribute('src', 'static/img/' + data[p].name + 'Square.png')
+      img.setAttribute('alt', data[p].name)
+
+      fig.appendChild(img);
+
+      //description
+
+      var info = document.createElement("section")
+      info.setAttribute('class', 'champion-description')
+      var h1 = document.createElement("h1")
+      h1.setAttribute('class', 'champion-name')
+      h1.textContent = data[p].name
+      var divtags = document.createElement("div")
+      divtags.setAttribute('class', 'champion-tags')
+
+
+      for (var i = 0; i < data[p].tags.length; i++) {
+        var tagsbg = document.createElement('span')
+        tagsbg.setAttribute('class', 'champion-tags background-' + data[p].tags[i]) //change
+        tagsbg.textContent = data[p].tags[i]
+        divtags.appendChild(tagsbg)
+      }
+
+
+      info.appendChild(h1)
+      info.appendChild(divtags)
+
+      //stats
+      var stats = document.createElement("section")
+      stats.setAttribute('class', 'champion-stats')
+
+
+      el.appendChild(fig)
+      el.appendChild(info)
+      //el.appendChild(stats)
+
+      x.appendChild(el)
+    }
+
+  }
+
+  function clearChildren(el) {
+    while (el.firstChild) {
+      el.removeChild(lastChild);
+    }
+  }
+</script>
+{%endblock%}
+
+</html>

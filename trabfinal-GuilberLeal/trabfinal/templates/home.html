@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block charlist %}
+{% for cpm in champions %}
+
+<div class="champion" data-name={{cpm['name']}} data-tags={{ cpm['tags'] }} tabindex={{ cpm['id'] }}>
+  <figure class="champion-figure">
+    <img src={{url_for('static', filename='img/' + cpm['name']|lower +'.png')}} alt={{cpm['name']}}>
+  </figure>
+  <section class="champion-description">
+    <span class="champion-id">#{{cpm['id']}}</span>
+    <h1 class="champion-name">{{cpm['name']}}</h1>
+    <div class="champion-tags">
+      {%for tags in cpm['tags']%}
+      <span class="champion-tags background-{{tags}}">{{tags}}</span>
+      {%endfor%}
+    </div>
+  </section>
+
+
+</div>
+
+{% endfor %}
+{% endblock %}

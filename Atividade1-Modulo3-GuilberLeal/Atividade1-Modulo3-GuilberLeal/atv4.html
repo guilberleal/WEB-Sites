@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+  <input type="button" onclick="countdown(15);" value="Clique aqui" />
+
+  <script type="text/javascript">
+    function countdown(n) {
+      alert('Contagem regressiva');
+      for (let i = 0; n; i++) {
+        let cont = n - i;
+        if (cont == 0) {
+          alert("Fim da contagem");
+        }
+        alert(cont);
+      }
+    }
+  </script>
+</body>
+
+</html>

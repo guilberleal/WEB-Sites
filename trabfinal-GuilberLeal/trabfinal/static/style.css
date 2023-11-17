@@ -1,0 +1,299 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: arial, sans-serif;
+}
+
+.background-stealth {
+  background-color: #a4acaf;
+  color: #212121 !important;
+}
+
+.background-dragon {
+  background-color: #53a4cf;
+  color: #fff !important;
+}
+
+.background-jungler {
+  background-color: #9bcc50;
+  color: #212121 !important;
+}
+
+.background-mage {
+  background-color: #b97fc9;
+  color: #fff !important;
+}
+
+.background-melee {
+  background-color: #fd7d24;
+  color: #fff !important;
+}
+
+.background-recommended {
+  background-color: #4592c4;
+  color: #fff !important;
+}
+
+.background-assassin {
+  background-color: #ee3535;
+  color: #ffffff !important;
+}
+
+.background-bug {
+  background-color: #729f3f;
+  color: #fff !important;
+}
+
+.background-ranged {
+  background-color: #3dc7ef;
+  color: #212121 !important;
+}
+
+.background-support {
+  background-color: #fdb9e9;
+  color: #212121 !important;
+}
+
+
+.background-tank {
+  background-color: #584a0b;
+  color: #fff !important;
+}
+
+.background-pusher {
+  background-color: #8f4629;
+  color: #fff !important;
+}
+
+
+.background-fighter {
+  background-color: #d56723;
+  color: #fff !important;
+}
+
+.background-carry {
+  background-color: #f7de3f;
+  color: #212121 !important;
+}
+
+header {
+  background-color: #212121;
+  color: #fff;
+  padding: .5rem 1rem;
+  text-align: center;
+}
+
+@keyframes loading-page {
+
+  0%,
+  80% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+main {
+  margin-top: 2rem;
+  animation: loading-page 2s;
+}
+
+.LOLchampions {
+  padding: 1rem;
+  display: grid;
+  grid-gap: 3rem 2rem;
+  grid-template-columns: repeat(auto-fill, 250px);
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.LOLchampions-control {
+  margin: 4rem 0 3rem;
+  display: grid;
+  grid-template-columns: 17rem;
+  grid-gap: .5rem;
+  justify-content: center;
+}
+
+@media (min-width: 840px) {
+  .LOLchampions-control {
+    grid-template-columns: repeat(3, 17rem);
+  }
+}
+
+.LOLchampions-control .form-control {
+  margin: 0 .5rem;
+  font-size: 1.1rem;
+  display: grid;
+  grid-template-columns: 3rem minmax(13rem, 15rem);
+  grid-gap: .5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+#number {
+  align-items: right;
+  width: 60px;
+}
+
+#submit {
+  width: 80px;
+}
+
+.form-group {
+  width: 250px;
+}
+
+@media (min-width: 840px) {
+  .LOLchampions-control .form-control {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 980px) {
+  .LOLchampions-control .form-control {
+    grid-template-columns: 3rem minmax(13rem, 15rem);
+  }
+}
+
+.LOLchampions-control .form-control label+* {
+  outline: none;
+  width: 100%;
+  font-size: 1.1rem;
+}
+
+.LOLchampions-control #filter-name {
+  border: none;
+  border-bottom: 1px solid #c0c0c0;
+  outline: none;
+  transition: all .2s;
+}
+
+.LOLchampions-control #filter-name:focus {
+  border-bottom: 1px solid #000;
+}
+
+@keyframes pokemon-up {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-.4rem);
+  }
+}
+
+.champion {
+  background-color: #f2f2f2;
+  overflow: hidden;
+  position: relative;
+}
+
+.champion:hover {
+  animation: pokemon-up .3s;
+  cursor: pointer;
+}
+
+.champion:focus {
+  outline: none;
+}
+
+.champion .champion-figure {
+  text-align: center;
+}
+
+.champion .champion-figure img {
+  position: relative;
+  z-index: 1;
+  transition: transform .3s;
+  padding-top: 16px;
+}
+
+.champion:focus .champion-figure img {
+  transform: scale(.6) translate(100px, -80px);
+}
+
+.champion .champion-description {
+  background-color: #fff;
+  margin: 0 1rem 1rem;
+  padding: .5rem;
+  transition: transform .3s;
+}
+
+.champion:focus .champion-description {
+  transform: translateY(-160px);
+}
+
+
+.champion .champion-name {
+  margin: 0rem 0 .6rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+.champion .champion-tags {
+  display: flex;
+}
+
+.champion .champion-tags {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 5rem;
+  margin-right: .5rem;
+  padding: .1rem .3rem;
+  font-size: .8rem;
+}
+
+.champion .champion-stats {
+  position: absolute;
+  width: calc(100% - 2rem);
+  margin: 0 1rem 1rem;
+  padding: .5rem;
+  font-size: .8rem;
+  background-color: #fff;
+  transform: translatey(300px);
+  transition: all .3s;
+}
+
+.champion:focus .champion-stats {
+  transform: translatey(-180px);
+}
+
+.champion .champion-stats .stat-row {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  margin: .5rem 0;
+}
+
+.champion .champion-stats .stat-bar {
+  background-color: #f2f2f2;
+}
+
+.champion .champion-stats .stat-bar-bg {
+  background-color: #212121;
+  color: #fff;
+  padding: 0 .2rem;
+}
+
+.navbar-brand {
+  transform: translateX(-50%);
+  left: 50%;
+  position: relative;
+}
+
+.row {
+  transform: translateX(-50%);
+  left: 50%;
+  position: absolute;
+  margin-top: 20px;
+
+}

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)http://htmlandcssbook.com/code-samples/chapter-14/example.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Lists, Tables and Forms</title>
+		<style type="text/css">
+
+			h1{
+				
+				
+				font-family: 'Times New Roman', Times, serif;
+				font-size: 50px;
+				color: #3b2900;
+			}
+
+			body {
+				font-family: 'Times New Roman', Times, serif;
+				font-size: 20px;
+				color: #3b2900;
+				background-color: #e6e0e0;}
+			li {
+				list-style-image: url("images/icon-plus.png");
+				line-height: 1.6em;
+				padding: 10px;
+				text-decoration-line: underline;
+				text-transform: capitalize;
+			}
+			table {
+				border-spacing: 4px;
+			}
+			th, td {
+				padding: 5px 25px 5px 5px;
+				border-spacing: 2px solid rgb(0, 0, 0);
+				font-size: 90%;
+				margin: 2px;
+			}
+			th, td {
+				
+				background-color: #d460df;
+				object-fit: cover;
+				object-position: 15% 100%;
+			}
+			tr.head th {
+				background-color: #5c5542;
+				text-align: center;
+				color: #ffffff;
+				letter-spacing: 0.40em;}
+			td {
+				text-shadow: -1px 1px 2px #3b2900;
+			}
+			tr.even td, tr.even th {
+				background-color: #e8eff5;
+			}
+			tr.head th:first-child {
+				-webkit-border-top-left-radius: 15px;
+				-moz-border-radius-topleft: 15px;
+				border-top-left-radius: 15px;}
+			tr.head th:last-child {
+				-webkit-border-top-right-radius: 15px;
+				-moz-border-radius-topright: 15px;
+				border-top-right-radius: 15px;}
+			fieldset {
+				width: 310px;
+				margin-top: 15px;
+				border: 1px solid #d6d6d6;
+				background-color: #c6e7ec;
+				line-height: 1.6em;
+				border-radius: 10px;
+			
+			}
+			legend {
+				font-size: 20px;
+				color: #3b2900;
+				
+
+			
+			}
+			input[type="text"] {
+			width: 100%;
+			padding: 12px;
+			border: 1px solid #ccc;
+			border-radius: 50px;
+			box-sizing: border-box;
+			margin-top: 6px;
+			margin-bottom: 16px;
+			resize: vertical;
+			outline: none;
+			
+		}
+			input[type="text"]:focus,
+			input[type="text"]:hover {
+				background-color: #82c2f3;
+				border: 1px solid #999999;
+			}
+			input[type="submit"] {
+				border: 1px solid #3823f8;
+				background-color: #06047e;
+				color: #ddd5d5;
+				border-radius: 5px;
+				margin-top: 10px;
+				padding: 15px 32px;
+				text-align: center;
+				text-decoration: none;
+				display: inline-block;
+				font-size: 14px;
+				
+				
+
+			
+			}
+			input[type="submit"]:hover {
+				border: 1px solid #2947f3;
+				background-color: #0b023b;
+				color: #a5a5a5;
+				cursor: pointer;
+
+				
+			
+			}
+			input[type=button] {
+				background-color: #2012df;
+				border: none;
+				color: rgb(182, 223, 240);
+				padding: 16px 32px;
+				text-decoration: none;
+				margin: 4px 2px;
+				cursor: pointer;
+			  }
+			select {
+				width: 100%;
+				padding: 10px 15px;
+				border: none;
+				border-radius: 50px;
+				background-color: #ffffff;
+			}
+		
+			.title {
+				float: left;
+				width: 160px;
+				clear: left;
+			}
+			.submit {
+				width: 310px;
+				text-align: right;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Poetry Workshops</h1>
+		<p>We will be conducting a number of poetry workshops and symposiums throughout the year.</p>
+		<p>Please note that the following events are free to members:</p>
+		<ul>
+			<li>A Poetic Perspective</li>
+			<li>Walt Whitman at War</li>
+			<li>Found Poems and Outsider Poetry</li>
+		</ul>
+		<table>
+			<tbody><tr class="head">
+				<th></th>
+				<th>New York</th>
+				<th>Chicago</th>
+				<th>San Francisco</th>
+			</tr>
+			<tr>
+				<th>A Poetic Perspective</th>
+				<td>Sat, 4 Feb 2012<br>11am - 2pm</td>
+				<td>Sat, 3 Mar 2012<br>11am - 2pm</td>
+				<td>Sat, 17 Mar 2012<br>11am - 2pm</td>
+			</tr>
+			<tr class="even">
+				<th>Walt Whitman at War</th>
+				<td>Sat, 7 Apr 2012<br>11am - 1pm</td>
+				<td>Sat, 5 May 2012<br>11am - 1pm</td>
+				<td>Sat, 19 May 2012<br>11am - 1pm</td>
+			</tr>
+			<tr>
+				<th>Found Poems &amp; Outsider Poetry</th>
+				<td>Sat, 9 Jun 2012<br>11am - 2pm</td>
+				<td>Sat, 7 Jul 2012<br>11am - 2pm</td>
+				<td>Sat, 21 Jul 2012<br>11am - 2pm</td>
+			</tr>
+			<tr class="even">
+				<th>Natural Death: An Exploration</th>
+				<td>Sat, 4 Aug 2012<br>11am - 4pm</td>
+				<td>Sat, 8 Sep 2012<br>11am - 4pm</td>
+				<td>Sat, 15 Sep 2012<br>11am - 4pm</td>
+			</tr>
+		</tbody></table>
+		<form action="http://www.example.com/form.php" method="get"><br>
+
+			<br><legend>Register your interest</legend>
+			<fieldset>
+				<p>
+					<label class="title" for="name">Your name:</label>
+					 <input type="text" name="name" id="name"><br>
+					 <label class="title" for="email">Your email:</label>
+					 <input type="text" name="email" id="email"></p>
+				<p>
+					<label for="country">Your Cloeset Center:</label>
+					<select id="country" name="country">
+					<option value="NY">New York</option>
+					<option value="Ch">Chicago</option>
+					<option value="SF">San Francisco</option>
+					
+					</select>
+				</p>
+				<span class="title">Are you a member?</span>
+				<label><input type="radio" name="member" value="yes"> Yes</label>
+				<label><input type="radio" name="member" value="no"> No</label>
+			</fieldset>
+ 	    <div class="submit"><input type="submit" value="Register"></div>
+		</form>
+	
+</body></html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], [type=email], [type=date],select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit],[type=reset] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+
+
+</head>
+<body>
+<fieldset>
+<h3>Formulário de cadastro</h3>
+
+<div class="container">
+  <form action="#">
+  
+  <fieldset>
+    <legend>Dados pessoais:</legend>
+    
+    <label for="fname" required>Nome Completo</label>
+    <input type="text" id="fname" name="firstname" placeholder="Seu nome..">
+
+    <label for="email">E-Mail</label>
+    <input type="email" id="mail" name="mail" placeholder="Seu e-mail..">
+    
+    <label for="ydate">Data Nascimento</label>
+    <input type="date" id="data" name="data" placeholder="data.."> 
+
+    <label for="city" required>Cidade</label>
+    <input type="text" id="fname" name="city" placeholder="Sua cidade..">
+
+    <label for="country">Estado</label>
+    <select id="country" name="country">
+      <option value="ac">Acre (AC)</option>
+      <option value="al">Alagoas (AL)</option>
+      <option value="ap">Amapá (AP)</option>
+      <option value="am">Amazonas (AM)</option>
+      <option value="ba">Bahia (BA)</option>
+      <option value="ce">Ceará (CE)</option>
+	  <option value="df">Distrito Federal (DF)</option>
+      <option value="es">Espírito Santo (ES)</option>
+      <option value="mt" selected>Mato Grosso (MT)</option>
+    </select>
+    
+    <label for="genero">Sexo:</label>
+    <input type="radio" id="sex" name="genero" value="HTML">
+    <label for="masc">Masc</label>
+    <input type="radio" id="fem" name="genero" value="CSS">
+    <label for="femi">Fem</label>
+   
+   
+   
+  </fieldset>
+<br>
+  <fieldset>
+   <legend>Informações Acadêmicas:</legend>
+   
+        <label for="trga" required>RGA</label>
+        <input type="text" id="fname" name="firstname" placeholder="Seu RGA..">
+        
+        <label for="tdisciplinas">Disciplinas do curso já realizadas (se aprovado)</label><br>
+        <input type="checkbox" id="disciplinas" name="disciplinas" value="disc">
+  		<label for="ED1">Estrutura de Dados 1 </label>
+  		<input type="checkbox" id="ed1" name="ed1" value="ed1">
+  		<label for="ED2">Estrutura de Dados 2</label>
+  		<input type="checkbox" id="ed2" name="ed2" value="ed2">
+      <label for="prog2"> Programação 2</label>
+      <input type="checkbox" id="prog2" name="prog2" value="prog2">
+      <label for="prog3"> Programação 3</label>
+      <input type="checkbox" id="prog3" name="prog3" value="prog3"><br>
+
+
+        <table class="tg" border="1">
+        
+        <thead>
+          <tr>
+            <th>  </th>
+            <th>Seg</th>
+            <th>Ter</th>
+            <th>Qua</th>
+            <th>Qui</th>
+            <th>Sex</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>07:30 às 09:30</td>
+            <td><input type="checkbox" name="c1_1" value="hr1"></td>
+            <td><input type="checkbox" name="c2_1" value="hr1"></td>
+            <td><input type="checkbox" name="c3_1" value="hr1"></td>
+            <td><input type="checkbox" name="c4_1" value="hr1"></td>
+            <td><input type="checkbox" name="c5_1" value="hr1"></td>
+          </tr>
+          <tr>
+            <td>09:30 às 11:30</td>
+            <td><input type="checkbox" name="c1_2" value="hr2"></td>
+            <td><input type="checkbox" name="c2_2" value="hr2"></td>
+            <td><input type="checkbox" name="c3_2" value="hr2"></td>
+            <td><input type="checkbox" name="c4_2" value="hr2"></td>
+            <td><input type="checkbox" name="c5_2" value="hr2"></td>
+          </tr>
+          <tr>
+            <td>13:30 às 15:30</td>
+            <td><input type="checkbox" name="c1_3" value="hr3"></td>
+            <td><input type="checkbox" name="c2_3" value="hr3"></td>
+            <td><input type="checkbox" name="c1_3" value="hr3"></td>
+            <td><input type="checkbox" name="c1_3" value="hr3"></td>
+            <td><input type="checkbox" name="c1_3" value="hr3"></td>
+          </tr>
+          <tr>
+            <td>15:30 às 17:30</td>
+            <td><input type="checkbox" name="c1_4" value="hr4"></td>
+            <td><input type="checkbox" name="c2_4" value="hr4"></td>
+            <td><input type="checkbox" name="c3_4" value="hr4"></td>
+            <td><input type="checkbox" name="c4_4" value="hr4"></td>
+            <td><input type="checkbox" name="c5_4" value="hr4"></td>
+          </tr>
+        </tbody>
+      </table>    
+      
+   </fieldset>
+
+<br>
+  </fieldset>
+    <input type="submit" value="Enviar">
+    <input type="reset" value="Limpar">
+  </form>
+</div>
+
+</body>
+</html>
